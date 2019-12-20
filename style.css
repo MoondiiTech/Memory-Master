@@ -316,7 +316,7 @@ footer {
     transform: translateY(-180%);
 }
 #nameInput:focus {
-    border-bottom: 1px solid yellow;
+    border-bottom: 2px solid yellow;
 }
 .u-margin-medium{
     margin: 2rem 0;
