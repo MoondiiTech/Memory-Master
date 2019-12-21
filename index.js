@@ -22,7 +22,7 @@ let data = {
     'options': 3,
     'correctTiles': [],
     'attempts': 3,
-    'lives': 3,
+    'lives': 1,
     'currentTile': 0,
     'openedTiles': [],
     'tilesToFill': [],
@@ -210,6 +210,8 @@ let compareWithTopScores = () => {
     }
     if (index === -1 && data.topPlayers.names.length >= 3) {
         return NaN;
+    } else if (index === -1 && data.topPlayers.scores.length < 3) {
+        return index = data.topPlayers.scores.length;
     } else {
         return index;
     }
@@ -231,6 +233,7 @@ let checkScore = () => {
             renderTopScores(data.topPlayers.names[i], data.topPlayers.scores[i], i, index);
 
         }
+        // IF compareWithTopScores return NaN ,render loser
     } else {
         // Render top scores and loser
         for (let i = 0; i < data.topPlayers.names.length; i++) {
