@@ -22,7 +22,7 @@ let data = {
     'options': 3,
     'correctTiles': [],
     'attempts': 3,
-    'lives': 1,
+    'lives': 3,
     'currentTile': 0,
     'openedTiles': [],
     'tilesToFill': [],
@@ -393,13 +393,14 @@ let save = () => {
     }
 }
 
-DOMselections.saveBtn.addEventListener('click', () => {
+DOMselections.saveBtn.addEventListener('click', (e) => {
+    e.preventDefault();
     save();
 })
 DOMselections.saveBtn.addEventListener('keydown', (e) => {
     if (e.keyCode === 13 || e.which === 13) {
         // Prevents form submission on enter
-        event.preventDefault();
+        e.preventDefault();
         save();
     }
 })
